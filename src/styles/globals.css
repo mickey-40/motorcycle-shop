@@ -168,8 +168,8 @@ width: 100%;
   position: absolute;
   top: 0%;
   right:20%;
-  width: 450px;
-  height: 450px;
+  width: 350px;
+  height: 350px;
 }
 
 
@@ -245,13 +245,13 @@ text-align: end;
   margin:18px;
 }
 .footer-banner-image{
-  position: absolute;
+  position:relative;
   /* top: -35%;
   left: 8%; */
   top: -25%;
   left: 25%;
-  width: 450px;
-  height: 450px;
+  width: 250px;
+  height: 250px;
 }
 .banner-desc .right{
   line-height: 1.4;
