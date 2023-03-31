@@ -8,16 +8,16 @@ export const StateContext = ({children}) => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState();
-  const [totalQuantities, setTotalQuantities] = useState();
+  const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
   
   const onAdd = (product, quantity) => {
     const ckeckProductInCart = cartItems.find((item)=> item._id === product._id);
-
+    
     if (ckeckProductInCart) {
       setTotalPrice((prevTotalPrice) => prevTotalPrice +product.price * quantity);
       setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
-
+      
       const updatedCartItems = cartItems.map((cartProduct)=>{
         if (cartProduct._id === product._id) return {
           ...cartProduct,
@@ -32,6 +32,7 @@ export const StateContext = ({children}) => {
       setCartItems([...cartItems, { ...product }])
     }
     toast.success(`${qty} ${product.name} added to the cart.`);
+    
 
   }
 
@@ -48,6 +49,7 @@ export const StateContext = ({children}) => {
     <Context.Provider
       value={{
         showCart,
+        setShowCart,
         cartItems,
         totalPrice,
         totalQuantities,
