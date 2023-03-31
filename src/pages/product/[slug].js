@@ -1,12 +1,16 @@
 import React, {useState} from 'react'
 import { AiOutlineMinusCircle, AiOutlinePlusCircle, AiFillStar, AiOutlineStar } from "react-icons/ai";
+import { client, urlFor } from '../../../lib/client';
 import { Product } from '../../../components';
-import Image from 'next/image'
-import { client, urlFor } from '../../../lib/client'
+import {useStateContext} from '../../../context/StateContext'
+
+
 
 const ProductDetails = ({ product, products}) => {
   const { image, name, details,price } = product;
   const [index, setIndex] = useState(0)
+  const { decQty, incQty, qty } = useStateContext();
+
   return (<div>
     <div className="product-detail-container">
       <div>
@@ -58,9 +62,9 @@ const ProductDetails = ({ product, products}) => {
         <div className="quantity">
           <h3>Quantity:</h3>
           <p className="quantity-desc">
-            <span className="minus" onClick=''><AiOutlineMinusCircle /></span>
-            <span className="num">0</span>
-            <span className="plus" onClick=''><AiOutlinePlusCircle /></span>
+            <span className="minus" onClick={decQty}><AiOutlineMinusCircle /></span>
+            <span className="num">{qty}</span>
+            <span className="plus" onClick={incQty}><AiOutlinePlusCircle /></span>
           </p>
         </div>
         <div className="buttons">
