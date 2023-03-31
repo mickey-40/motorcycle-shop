@@ -16,7 +16,7 @@ export const StateContext = ({children}) => {
     
     if (ckeckProductInCart) {
       setTotalPrice((prevTotalPrice) => prevTotalPrice +product.price * quantity);
-      setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
+      // setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
       
       const updatedCartItems = cartItems.map((cartProduct)=>{
         if (cartProduct._id === product._id) return {
@@ -32,8 +32,9 @@ export const StateContext = ({children}) => {
       setCartItems([...cartItems, { ...product }])
     }
     toast.success(`${qty} ${product.name} added to the cart.`);
-    
+    setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
 
+    {console.log(totalQuantities)}
   }
 
   const incQty = () => {
