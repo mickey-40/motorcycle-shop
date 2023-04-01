@@ -43,15 +43,32 @@ const Cart = () => {
                 </div>
                 <div>
                   <p className="quantity-desc">
-                    <span className="minus" onClick='{decQty}'><AiOutlineMinusCircle /></span>
+                    <span className="minus" onClick=''><AiOutlineMinusCircle /></span>
                     <span className="num">0</span>
-                    <span className="plus" onClick='{incQty}'><AiOutlinePlusCircle /></span>
+                    <span className="plus" onClick=''><AiOutlinePlusCircle /></span>
                   </p>
                 </div>
+                <button type='button' className='remove-item' onClick= "">
+                  <TiDeleteOutline />
+                </button>
                 </div>
+                
               </div>
           ))}
         </div>
+        {cartItems.length >= 1 && (
+          <div className='cart-bottom'>
+            <div className='total'>
+              <h3>Subtotal:</h3>
+              <h3>${totalPrice}</h3>
+            </div>
+            <div className='btn-container'>
+              <button type='button' className='btn' onClick=''>
+                Pay with Stripe
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
