@@ -41,7 +41,7 @@ const Cart = () => {
                   <h5>{item.name}</h5>
                   <h4>${item.price}</h4>
                 </div>
-                <div>
+                <div >
                   <p className="quantity-desc">
                     <span className="minus" onClick=''><AiOutlineMinusCircle /></span>
                     <span className="num">0</span>
