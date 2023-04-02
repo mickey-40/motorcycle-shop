@@ -7,8 +7,8 @@ const HeroBanner = ({HeroBanner}) => {
   return (
     <div className='hero-banner-container'>
       <div>
-        {console.log(HeroBanner.product)}
-        <p className='beats-solo'>{HeroBanner.smallText}</p>
+        {/* {console.log(HeroBanner.product)} */}
+        <p className='helmet'>{HeroBanner.smallText}</p>
         <h3>{HeroBanner.midText}</h3>
         <h3>{HeroBanner.largeText1}</h3>
         <picture>
