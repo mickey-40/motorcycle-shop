@@ -46,18 +46,18 @@ width: 100%;
 }
 
 .track {
-  position: absolute;
+  position: relative;
   white-space: nowrap;
   will-change: transform;
   animation: marquee 25s linear infinite;
-  width: 180%;
+  width: 200%;
 }
 .track:hover {
   animation-play-state: paused;
 }
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from { transform: translateX(0%); }
+  to { transform: translateX(-100%); }
 }
 
  span.text-red {
@@ -527,7 +527,7 @@ padding: 30px 65px;
   transform:scale(1.1,1.1)
 }
 .quantity-desc{
-  width: 45%;
+  width: 30%;
   border: 1px solid gray;
   padding: 6px;
 }
@@ -775,6 +775,6 @@ margin-top: 160px;
 }
 
 .quantity-desc{
-  width: 70%;
+  width: 40%;
 }
 }
